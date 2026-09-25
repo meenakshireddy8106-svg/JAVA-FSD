@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- inline event handlers(using event attributes in HTML)-->
+     <button id="btn"  >submit</button>
+     <input type="text" id="input">
+</body> 
+    <script>
+    /*
+        EVENT HANDLING
+
+        EVENT
+        :- event is nothing but an action
+        :- in webpage also what ever user do everything is an event
+
+        WAYS OF GENERATING AN EVENT
+        :- user-> keypress, scroll, focus..
+        :- system-> load, error, abort..
+        
+        TYPES OF USER GENERATED EVENTS
+        :- browser specific events -> scroll up/down resize browser
+        :- DOM/webn page specific events ->clich, hover, focus..
+
+        Event handler is function  we write to run when an event happens
+        */
+
+       /*
+            COMMONLY USED EVENTS IN JAVASCRIPT
+
+            Mouse events
+                click
+                doubleclick
+                mouseover
+                mouseout
+                mouse move
+            
+            Keyborad events
+                key down
+                key up
+                key press
+            Focus events
+                focus
+                blur
+                focusin
+                focusout
+            Form events:- only used for forms
+                submit
+                reset 
+                change
+        */
+       /*   WAYS TO HANDLE EVENTS
+            1.inline
+            2.internal
+            3.using event properties in java script
+            4.using addEventListner() in java script
+
+       */
+      //INTERNAL
+    //   function change(){
+    //     document.body.style.backgroundColor='grey'
+    //   }
+    
+     let v1=document.getElementById("btn    gt=''")
+     let v2=document.getElementById("input")
+    v1.onclick=change
+    function change(){
+        document.body.style.backgroundColor='grey'
+      }
+    // v2.addEventListener('focus',change)
+    // function change(){
+    //     console.log(event)
+    //     v2.style.backgroundColor='green'
+    //   }
+
+</script>
+</html>
