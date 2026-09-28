@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Meenakshi Reddy | Birthday Invitation</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #fff8e7;
+    color: #35120f;
+}
+
+/* NAVBAR */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #111820;
+    padding: 15px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #d4af37;
+}
+
+.logo {
+    color: #ffd86b;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffd86b;
+}
+
+/* HERO */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+
+    background:
+        linear-gradient(rgba(30,10,5,.55), rgba(30,10,5,.55)),
+        url("https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1600&q=80");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    color: white;
+    max-width: 850px;
+}
+
+.crown {
+    font-size: 60px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 7vw, 75px);
+    color: #ffd86b;
+    margin: 15px 0;
+    font-family: Georgia, serif;
+}
+
+.hero h2 {
+    font-size: clamp(25px, 4vw, 45px);
+    margin-bottom: 25px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin: 12px;
+}
+
+.theme {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    border: 2px solid #ffd86b;
+    border-radius: 30px;
+    color: #ffd86b;
+    font-weight: bold;
+}
+
+/* GENERAL SECTION */
+section {
+    padding: 70px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 42px;
+    color: #8b5e00;
+    margin-bottom: 15px;
+    font-family: Georgia, serif;
+}
+
+.subtitle {
+    text-align: center;
+    color: #777;
+    margin-bottom: 50px;
+}
+
+/* TIMELINE */
+.timeline {
+    max-width: 900px;
+    margin: auto;
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #d4af37;
+    transform: translateX(-50%);
+}
+
+.event {
+    width: 46%;
+    padding: 25px;
+    background: white;
+    border-radius: 18px;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.12);
+    border: 1px solid #ead28a;
+    position: relative;
+}
+
+.event:nth-child(odd) {
+    margin-right: auto;
+}
+
+.event:nth-child(even) {
+    margin-left: auto;
+}
+
+.event::after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: #d4af37;
+    border: 4px solid white;
+    border-radius: 50%;
+    top: 30px;
+}
+
+.event:nth-child(odd)::after {
+    right: -12%;
+}
+
+.event:nth-child(even)::after {
+    left: -12%;
+}
+
+.time {
+    color: #a46f00;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.event h3 {
+    margin: 8px 0;
+    color: #5c1c18;
+    font-size: 21px;
+}
+
+.event p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* INFO */
+.info-section {
+    background: #171d24;
+    color: white;
+    text-align: center;
+}
+
+.info-section .section-title {
+    color: #ffd86b;
+}
+
+.info-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.info-box {
+    background: #242c35;
+    padding: 25px;
+    border-radius: 15px;
+    min-width: 200px;
+    border: 1px solid #d4af37;
+}
+
+.info-box span {
+    display: block;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.info-box h3 {
+    color: #ffd86b;
+    margin-bottom: 8px;
+}
+
+/* RSVP */
+.rsvp {
+    text-align: center;
+    background: linear-gradient(135deg, #fff2c7, #fffaf0);
+}
+
+.rsvp h2 {
+    font-size: 40px;
+    color: #7a4300;
+    margin-bottom: 15px;
+}
+
+.rsvp p {
+    font-size: 19px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 35px;
+    border-radius: 30px;
+    background: #b77b00;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 8px;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: #704700;
+    transform: scale(1.05);
+}
+
+/* FOOTER */
+footer {
+    background: #111820;
+    color: #ffd86b;
+    text-align: center;
+    padding: 25px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+/* MOBILE */
+@media(max-width: 700px) {
+
+    nav {
+        padding: 15px;
+    }
+
+    nav a {
+        margin-left: 8px;
+        font-size: 13px;
+    }
+
+    .timeline::before {
+        left: 10px;
+    }
+
+    .event,
+    .event:nth-child(even),
+    .event:nth-child(odd) {
+        width: 90%;
+        margin-left: 30px;
+        margin-right: 0;
+    }
+
+    .event::after,
+    .event:nth-child(odd)::after,
+    .event:nth-child(even)::after {
+        left: -30px;
+        right: auto;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="logo">👑 Meenakshi Reddy</div>
+
+    <div>
+        <a href="#home">Home</a>
+        <a href="#events">Events</a>
+        <a href="#location">Location</a>
+        <a href="#rsvp">RSVP</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="crown">👑</div>
+
+        <p>You're Invited To</p>
+
+        <h1>Meenakshi Reddy</h1>
+
+        <h2>🎂 Birthday Invitation 🎉</h2>
+
+        <p>📅 August 6</p>
+        <p>⏰ 6:00 PM</p>
+        <p>📍 Sai Baba Temple, Kurnool</p>
+
+        <div class="theme">
+            ✨ Royal Gold Theme ✨
+        </div>
+
+        <p style="margin-top:25px;">
+            Come celebrate a beautiful evening filled with
+            happiness, laughter and unforgettable memories!
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- EVENT FLOW -->
+<section id="events">
+
+    <h2 class="section-title">✨ Event Flow ✨</h2>
+
+    <p class="subtitle">
+        Here's how the birthday celebration unfolds
+    </p>
+
+    <div class="timeline">
+
+        <div class="event">
+            <div class="time">06:00 PM</div>
+            <h3>🥂 Welcome & Greetings</h3>
+            <p>
+                Guests arrival and welcome drinks.
+            </p>
+        </div>
+
+        <div class="event">
+            <div class="time">06:30 PM</div>
+            <h3>🎂 Cake Cutting Ceremony</h3>
+            <p>
+                Birthday cake cutting and celebration.
+            </p>
+        </div>
+
+        <div class="event">
+            <div class="time">07:00 PM</div>
+            <h3>🎮 Games & Fun Activities</h3>
+            <p>
+                Musical Chairs • Housie • Dumb Charades
+                • Kids Games
+            </p>
+        </div>
+
+        <div class="event">
+            <div class="time">07:30 PM</div>
+            <h3>🎵 Dance & Music / DJ Party</h3>
+            <p>
+                Dance floor open! Let's celebrate together.
+            </p>
+        </div>
+
+        <div class="event">
+            <div class="time">08:00 PM</div>
+            <h3>📸 Photo Booth & Selfie Corner</h3>
+            <p>
+                Capture beautiful family photos and
+                unforgettable memories.
+            </p>
+        </div>
+
+        <div class="event">
+            <div class="time">08:15 PM</div>
+            <h3>🎁 Return Gifts Distribution</h3>
+            <p>
+                Special return gifts for our wonderful guests.
+            </p>
+        </div>
+
+        <div class="event">
+            <div class="time">08:30 PM</div>
+            <h3>🍽️ Dinner / Snacks Party</h3>
+            <p>
+                Buffet and delicious snacks.
+                Menu announcement at the venue.
+            </p>
+        </div>
+
+        <div class="event">
+            <div class="time">09:00 PM</div>
+            <h3>💖 Thank You Speech & Closing</h3>
+            <p>
+                A heartfelt thank-you to everyone
+                for making the celebration special.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- LOCATION / DETAILS -->
+<section class="info-section" id="location">
+
+    <h2 class="section-title">📍 Celebration Details</h2>
+
+    <p class="subtitle" style="color:#ddd;">
+        Join us for a memorable birthday celebration!
+    </p>
+
+    <div class="info-boxes">
+
+        <div class="info-box">
+            <span>📅</span>
+            <h3>Date</h3>
+            <p>August 6</p>
+        </div>
+
+        <div class="info-box">
+            <span>⏰</span>
+            <h3>Time</h3>
+            <p>6:00 PM onwards</p>
+        </div>
+
+        <div class="info-box">
+            <span>📍</span>
+            <h3>Venue</h3>
+            <p>Sai Baba Temple</p>
+            <p>Kurnool</p>
+        </div>
+
+        <div class="info-box">
+            <span>👑</span>
+            <h3>Theme</h3>
+            <p>Royal Gold</p>
+        </div>
+
+    </div>
+
+    <br>
+
+    <a
+      class="btn"
+      href="https://www.google.com/maps/search/?api=1&query=Sai+Baba+Temple+Kurnool"
+      target="_blank">
+      📍 Open Location
+    </a>
+
+</section>
+
+
+<!-- RSVP -->
+<section class="rsvp" id="rsvp">
+
+    <h2>💖 Your Presence Matters!</h2>
+
+    <p>
+        Come celebrate Meenakshi Reddy's special day
+        with love, laughter and happiness!
+    </p>
+
+    <a
+      class="btn"
+      href="https://wa.me/?text=Hello!%20I%20would%20love%20to%20attend%20Meenakshi%20Reddy's%20Birthday%20Party!%20🎂🎉"
+      target="_blank">
+      💬 RSVP on WhatsApp
+    </a>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <p>👑 With Love, Meenakshi Reddy 👑</p>
+
+    <p>
+        © Birthday Celebration • August 6
+    </p>
+
+</footer>
+
+
+<script>
+
+// Welcome animation
+window.addEventListener("load", function() {
+
+    console.log(
+        "🎉 Welcome to Meenakshi Reddy's Birthday Invitation!"
+    );
+
+});
+
+</script>
+
+</body>
+</html>
