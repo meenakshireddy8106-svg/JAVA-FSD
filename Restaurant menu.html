@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meenakshi Reddy Restaurant</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #fff8f0;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: #8b0000;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        /* Hero */
+        .hero {
+            height: 400px;
+            background: linear-gradient(
+                rgba(0,0,0,0.55),
+                rgba(0,0,0,0.55)
+            ),
+            url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4")
+            center/cover;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #ff9800;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        /* Menu */
+        .menu {
+            padding: 50px 8%;
+            text-align: center;
+        }
+
+        .menu h2 {
+            font-size: 35px;
+            color: #8b0000;
+            margin-bottom: 30px;
+        }
+
+        .categories {
+            margin-bottom: 30px;
+        }
+
+        .categories button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            background: #8b0000;
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .categories button:hover {
+            background: #ff9800;
+        }
+
+        .menu-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .food-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: 0.3s;
+        }
+
+        .food-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .food-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .food-info {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .food-info h3 {
+            color: #8b0000;
+            margin-bottom: 8px;
+        }
+
+        .food-info p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #e65100;
+        }
+
+        /* About */
+        .about {
+            padding: 50px 8%;
+            background: #8b0000;
+            color: white;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        /* Contact */
+        .contact {
+            padding: 50px 8%;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: #8b0000;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            margin: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media(max-width: 600px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 8px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            🍴 Meenakshi Reddy Restaurant
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+        <div>
+            <h1>Welcome to Meenakshi Reddy Restaurant</h1>
+
+            <p>Delicious Food • Great Taste • Happy Moments</p>
+
+            <a href="#menu" class="btn">
+                View Menu
+            </a>
+        </div>
+
+    </section>
+
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+
+        <h2>Our Menu</h2>
+
+        <div class="categories">
+
+            <button onclick="filterMenu('all')">
+                All
+            </button>
+
+            <button onclick="filterMenu('south')">
+                South Indian
+            </button>
+
+            <button onclick="filterMenu('north')">
+                North Indian
+            </button>
+
+            <button onclick="filterMenu('drinks')">
+                Drinks
+            </button>
+
+        </div>
+
+
+        <div class="menu-container">
+
+            <!-- Food 1 -->
+            <div class="food-card south">
+
+                <img src="https://images.unsplash.com/photo-1630383249896-424e482df921">
+
+                <div class="food-info">
+
+                    <h3>Masala Dosa</h3>
+
+                    <p>Crispy dosa served with potato masala and chutney.</p>
+
+                    <span class="price">₹120</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Food 2 -->
+            <div class="food-card south">
+
+                <img src="https://images.unsplash.com/photo-1626132647523-66f5bf380027">
+
+                <div class="food-info">
+
+                    <h3>Idli Sambar</h3>
+
+                    <p>Soft idlis served with hot sambar and chutney.</p>
+
+                    <span class="price">₹80</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Food 3 -->
+            <div class="food-card north">
+
+                <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950">
+
+                <div class="food-info">
+
+                    <h3>Paneer Butter Masala</h3>
+
+                    <p>Soft paneer cooked in rich creamy tomato gravy.</p>
+
+                    <span class="price">₹220</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Food 4 -->
+            <div class="food-card north">
+
+                <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe">
+
+                <div class="food-info">
+
+                    <h3>Veg Thali</h3>
+
+                    <p>Complete Indian meal with rice, roti, curry and dessert.</p>
+
+                    <span class="price">₹180</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Food 5 -->
+            <div class="food-card south">
+
+                <img src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7">
+
+                <div class="food-info">
+
+                    <h3>Veg Biryani</h3>
+
+                    <p>Flavorful basmati rice cooked with vegetables and spices.</p>
+
+                    <span class="price">₹190</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Food 6 -->
+            <div class="food-card drinks">
+
+                <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e">
+
+                <div class="food-info">
+
+                    <h3>Fresh Lime Juice</h3>
+
+                    <p>Refreshing fresh lime drink.</p>
+
+                    <span class="price">₹60</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section class="about" id="about">
+
+        <h2>About Us</h2>
+
+        <p>
+            Meenakshi Reddy Restaurant brings delicious Indian cuisine
+            with fresh ingredients and traditional flavors.
+        </p>
+
+        <p>
+            Visit us in BTM Layout, Bangalore.
+        </p>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+
+        <h2>Contact Us</h2>
+
+        <p>📍 BTM Layout, Bangalore</p>
+
+        <p>📞 +91 98765 43210</p>
+
+        <p>✉️ meenakshireddyrestaurant@gmail.com</p>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 Meenakshi Reddy Restaurant | All Rights Reserved
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script>
+
+        function filterMenu(category) {
+
+            let foods = document.querySelectorAll(".food-card");
+
+            foods.forEach(function(food) {
+
+                if (category === "all") {
+
+                    food.style.display = "block";
+
+                }
+
+                else if (food.classList.contains(category)) {
+
+                    food.style.display = "block";
+
+                }
+
+                else {
+
+                    food.style.display = "none";
+
+                }
+
+            });
+
+        }
+
+    </script>
+
+</body>
+</html>
