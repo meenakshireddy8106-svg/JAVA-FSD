@@ -1,0 +1,113 @@
+public class TwoDArrayOperations {
+
+    public static void main(String[] args) {
+
+        // Matrix A
+        int[][] matrixA = {
+            {8, 6},
+            {4, 2}
+        };
+
+        // Matrix B
+        int[][] matrixB = {
+            {4, 2},
+            {2, 1}
+        };
+
+        int rows = matrixA.length;
+        int cols = matrixA[0].length;
+
+        // Result arrays
+        int[][] sum = new int[rows][cols];
+        int[][] sub = new int[rows][cols];
+        double[][] div = new double[rows][cols];
+        int[][] mul = new int[rows][cols];
+
+        // Addition, Subtraction and Division
+        for (int i = 0; i < rows; i++) {
+
+            for (int j = 0; j < cols; j++) {
+
+                sum[i][j] = matrixA[i][j] + matrixB[i][j];
+
+                sub[i][j] = matrixA[i][j] - matrixB[i][j];
+
+                div[i][j] =
+                    (double) matrixA[i][j] / matrixB[i][j];
+            }
+        }
+
+        // Matrix Multiplication
+        for (int i = 0; i < rows; i++) {
+
+            for (int j = 0; j < cols; j++) {
+
+                for (int k = 0; k < cols; k++) {
+
+                    mul[i][j] +=
+                        matrixA[i][k] * matrixB[k][j];
+                }
+            }
+        }
+
+        // Display Matrix A
+        System.out.println("--- Matrix A ---");
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print(matrixA[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        // Display Matrix B
+        System.out.println("\n--- Matrix B ---");
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print(matrixB[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        // Addition
+        System.out.println("\n--- Addition (A + B) ---");
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print(sum[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        // Subtraction
+        System.out.println("\n--- Subtraction (A - B) ---");
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print(sub[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        // Multiplication
+        System.out.println("\n--- Multiplication (A * B) ---");
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print(mul[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        // Division
+        System.out.println("\n--- Division (A / B) ---");
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.printf("%.2f ", div[i][j]);
+            }
+            System.out.println();
+        }
+    }
+}
